@@ -103,7 +103,7 @@ func jsHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}*/
 		// If the request is for a specific file, pass the request to http.FileServer
-		http.StripPrefix("/assets/js/", http.FileServer(http.Dir("assets"))).ServeHTTP(w, r)
+		http.StripPrefix("/assets/js/", http.FileServer(http.Dir("assets/js"))).ServeHTTP(w, r)
 	} else {
 		// If the path is incorrect, return a 404 error
 		errorHandler(w, http.StatusNotFound)

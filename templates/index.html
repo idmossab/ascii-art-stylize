@@ -1,26 +1,36 @@
 {{ define "content" }}
-<h1>ASCII Art Generator</h1>
-<form action="/ascii-art" method="post">
-    <h2 name="err">{{.Result.Err}}</h2>
-    <label for="text">Text:</label>
-    <textarea id="text" name="text" maxlength="700" required>{{.Result.Text}}</textarea>
-    <!-- Retain the value -->
-    <fieldset>
-        <legend>Select a banner:</legend>
-        <label><input type="radio" name="banner" value="shadow" {{if eq .Result.Banner "shadow"}}checked{{end}} required checked> Shadow</label>
-        <label><input type="radio" name="banner" value="standard" {{if eq .Result.Banner "standard"}}checked{{end}}> Standard</label>
-        <label><input type="radio" name="banner" value="thinkertoy" {{if eq .Result.Banner "thinkertoy"}}checked{{end}}> Thinkertoy</label>
-    </fieldset>
+<!-- Home Section -->
+<section id="home-section">
+    <h1>ASCII Art Generator</h1>
+    <form action="/ascii-art" method="post">
+        <h2 name="err">{{.Result.Err}}</h2>
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" maxlength="700" required>{{.Result.Text}}</textarea>
+        <!-- Retain the value -->
+        <fieldset>
+            <legend>Select a banner:</legend>
+            <label><input type="radio" name="banner" value="shadow" {{if eq .Result.Banner "shadow"}}checked{{end}} required checked> Shadow</label>
+            <label><input type="radio" name="banner" value="standard" {{if eq .Result.Banner "standard"}}checked{{end}}> Standard</label>
+            <label><input type="radio" name="banner" value="thinkertoy" {{if eq .Result.Banner "thinkertoy"}}checked{{end}}> Thinkertoy</label>
+        </fieldset>
 
-    <button type="submit">Generate ASCII Art</button>
-    <button type="button" onclick="clearText()">Clear Text</button>
-</form>
+        <button type="submit">Generate ASCII Art</button>
+        <button type="button" onclick="clearText()">Clear Text</button>
+    </form>
 
-<!-- Place to display results -->
+    <!-- Place to display results -->
 
-<div id="reload">
-    <pre>
+    <div id="reload">
+        <pre>
         {{.Result.Symbol}}
     </pre>
-</div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about-section">
+    <h2>About Us</h2>
+    <p>Welcome to the About Us section. Here you can describe your project, your team, or the purpose of the website.</p>
+</section>
+
 {{ end }}
