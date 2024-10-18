@@ -1,0 +1,26 @@
+{{ define "content" }}
+<h1>ASCII Art Generator</h1>
+<form action="/ascii-art" method="post">
+    <h2 name="err">{{.Result.Err}}</h2>
+    <label for="text">Text:</label>
+    <textarea id="text" name="text" maxlength="700" required>{{.Result.Text}}</textarea>
+    <!-- Retain the value -->
+    <fieldset>
+        <legend>Select a banner:</legend>
+        <label><input type="radio" name="banner" value="shadow" {{if eq .Result.Banner "shadow"}}checked{{end}} required checked> Shadow</label>
+        <label><input type="radio" name="banner" value="standard" {{if eq .Result.Banner "standard"}}checked{{end}}> Standard</label>
+        <label><input type="radio" name="banner" value="thinkertoy" {{if eq .Result.Banner "thinkertoy"}}checked{{end}}> Thinkertoy</label>
+    </fieldset>
+
+    <button type="submit">Generate ASCII Art</button>
+    <button type="button" onclick="clearText()">Clear Text</button>
+</form>
+
+<!-- Place to display results -->
+
+<div id="reload">
+    <pre>
+        {{.Result.Symbol}}
+    </pre>
+</div>
+{{ end }}
