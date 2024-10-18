@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net"
 	"net/http"
 )
@@ -26,5 +27,6 @@ func (srv *Server) StartServer() error {
 	}
 
 	// Use the default handler registered in processor.go
+	fmt.Println("Server is running at http://localhost:8080")
 	return http.Serve(ln, nil)
 }

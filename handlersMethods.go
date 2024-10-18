@@ -109,3 +109,24 @@ func jsHandler(w http.ResponseWriter, r *http.Request) {
 		errorHandler(w, http.StatusNotFound)
 	}
 }
+
+func cssHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		errorHandler(w, http.StatusMethodNotAllowed)
+		return
+	}
+	// Check the path
+	if strings.HasPrefix(r.URL.Path, "/assets/css/") {
+		// If the request is directly to /assets/css/, return a forbidden error
+		if r.URL.Path == "/assets/css/" {
+			errorHandler(w, http.StatusForbidden)
+			return
+		}
+		// If the request is for a specific file, pass the request to http.FileServer
+		http.StripPrefix("/assets/css/", http.FileServer(http.Dir("assets/css"))).ServeHTTP(w, r)
+	} else {
+		// If the path is incorrect, return a 404 error
+		errorHandler(w, http.StatusNotFound)
+	}
+}
+

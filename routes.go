@@ -8,5 +8,7 @@ import (
 func registerRoutes() {
     http.HandleFunc("/", getHandler)            
     http.HandleFunc("/ascii-art", postHandler) 
-    http.HandleFunc("/assets/js/", jsHandler)        
+    http.HandleFunc("/assets/js/", jsHandler) 
+    http.HandleFunc("/assets/css/", cssHandler)        
+       
 }

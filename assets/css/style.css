@@ -1,0 +1,101 @@
+/* Basic reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* Header styling */
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo styling */
+
+.logo h1 {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Helvetica', sans-serif;
+}
+
+
+/* Navbar styling */
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+
+/* Section styling */
+
+section {
+    padding: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+
+/* Sticky Header */
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

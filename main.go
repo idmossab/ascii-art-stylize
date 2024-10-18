@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 	"log"
@@ -32,7 +31,6 @@ func main() {
     registerRoutes()
 
     // Start server
-	fmt.Println("Server is running at http://localhost:8080")
     err := server.StartServer() 
      if err != nil {
             // If there's an error, store it and show it in the error page
