@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"strings"
 )
@@ -88,7 +87,6 @@ func postHandler(w http.ResponseWriter, r *http.Request) {
 
 // Function to handle requests to the /Js/ path
 func jsHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("a")
 	if r.Method != http.MethodGet {
 		errorHandler(w, http.StatusMethodNotAllowed)
 		return
