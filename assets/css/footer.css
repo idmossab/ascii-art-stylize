@@ -1,0 +1,55 @@
+/* --------------- Footer styling -------------------*/
+
+
+/* Footer styling */
+
+footer {
+    background-color: #FA8072;
+    color: aliceblue;
+    font-size: large;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-center a {
+    margin: 0 10px;
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-center a:hover {
+    color: #333;
+}
+
+.footer-right iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 200px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}

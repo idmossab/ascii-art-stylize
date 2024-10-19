@@ -1,0 +1,41 @@
+/* --------------- Header styling -------------------*/
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+    /* Removes the underline */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    /* Add space between the items */
+}
+
+nav ul li a {
+    color: #FA8072;
+    text-decoration: none;
+    padding: 5px 10px;
+    /* Space around the link text */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
