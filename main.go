@@ -22,7 +22,8 @@ func main() {
 	/*http.HandleFunc("/", getHandler)
 	http.HandleFunc("/ascii-art", postHandler)
 	http.HandleFunc("/Js/", jsHandler)
-
+    http.HandleFunc("/assets/js/", jsHandler) 
+    http.HandleFunc("/assets/css/", cssHandler)     
 	fmt.Println("Server is running at http://localhost:8080")
 	http.ListenAndServe(":8080", nil)*/
 

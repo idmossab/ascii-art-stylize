@@ -14,7 +14,7 @@ body {
 }
 
 
-/* Header styling */
+/* --------------- Header styling -------------------*/
 
 header {
     background-color: #333;
@@ -25,77 +25,59 @@ header {
     padding: 10px 20px;
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
 }
 
-
-/* Logo styling */
-
-.logo h1 {
-    font-size: 24px;
-    color: #fff;
-    font-family: 'Helvetica', sans-serif;
-}
-
-
-/* Navbar styling */
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-.navbar ul li {
-    margin-left: 20px;
-}
-
-.navbar ul li a {
+.logo a {
+    color: #ffffff;
     text-decoration: none;
+    /* Removes the underline */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    /* Add space between the items */
+}
+
+nav ul li a {
+    color: #FA8072;
+    text-decoration: none;
+    padding: 5px 10px;
+    /* Space around the link text */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
     color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    background-color: #555;
 }
 
 
-/* Section styling */
+/* --------------- Section styling -------------------*/
 
-section {
+#home-section {
     padding: 50px;
-    background-color: #fff;
+    background-color: #707b7c;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+#about-section {
+    padding: 50px;
+    background-color: #fbfcfc;
     border-bottom: 1px solid #ddd;
     margin-top: 10px;
 }
 
 
-/* Sticky Header */
+/* --------------- Footer styling -------------------*/
 
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    z-index: 1000;
-}
-
-
-/* Responsive design */
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .navbar ul {
-        flex-direction: column;
-    }
-    .navbar ul li {
-        margin-left: 0;
-        margin-top: 10px;
-    }
+footer {
+    background-color: #FA8072;
+    color: aliceblue;
+    font-size: large;
 }
