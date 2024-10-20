@@ -130,3 +130,23 @@ func cssHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Function to handle requests to the /assets/images/ path
+func imgHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		errorHandler(w, http.StatusMethodNotAllowed)
+		return
+	}
+	// Check the path
+	if strings.HasPrefix(r.URL.Path, "/assets/images/") {
+		// If the request is directly to /assets/images/, return a forbidden error
+		if r.URL.Path == "/assets/images/" {
+			errorHandler(w, http.StatusForbidden)
+			return
+		}
+		// If the request is for a specific file, pass the request to http.FileServer
+		http.StripPrefix("/assets/images/", http.FileServer(http.Dir("assets/images"))).ServeHTTP(w, r)
+	} else {
+		// If the path is incorrect, return a 404 error
+		errorHandler(w, http.StatusNotFound)
+	}
+}
