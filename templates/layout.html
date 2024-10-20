@@ -51,11 +51,11 @@
             <!-- Center Section (Subscribe Form) -->
             <div class="footer-center">
                 <h3>Contact Us</h3>
-                <form>
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                    <textarea name="message" id="msgUser"></textarea>
-                    <button type="submit">Subscribe Now</button>
+                <form action="/send-email" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
                 </form>
             </div>
 

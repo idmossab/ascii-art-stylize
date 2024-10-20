@@ -10,7 +10,8 @@ func registerRoutes() {
     http.HandleFunc("/ascii-art", postHandler) 
     http.HandleFunc("/assets/js/", jsHandler) 
     http.HandleFunc("/assets/css/", cssHandler)
-    http.HandleFunc("/assets/images/", imgHandler)        
+    http.HandleFunc("/assets/images/", imgHandler)
+    http.HandleFunc("/send-email", sendEmailHandler)        
         
        
 }
