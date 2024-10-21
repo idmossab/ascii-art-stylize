@@ -6,11 +6,7 @@ import (
 	"net/http"
 	"net/smtp"
 )
-var(
-	name string
-	email string
-	message string
-)
+
 // Function to send an email
 func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
@@ -24,15 +20,15 @@ func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		// Get form values
-		name = r.FormValue("name")
-		email = r.FormValue("email")
-		message = r.FormValue("message")
-		fmt.Println(name)
+		name := r.FormValue("name")
+		email := r.FormValue("email")
+		message := r.FormValue("message")
+
 		// Construct the email body
 		body := fmt.Sprintf("Name: %s\nEmail: %s\nMessage: %s", name, email, message)
 
 		// Send the email using SMTP
-		err := sendEmail("mossabbs888@gmail.com", "MOSsab@06", body)
+		err := sendEmail(body)
 		if err != nil {
 			log.Println("Error sending email:", err)
 			http.Error(w, "Failed to send email", http.StatusInternalServerError)
@@ -46,20 +42,21 @@ func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
 // Helper function to send the email
-func sendEmail(from, password, body string) error {
+func sendEmail( body string) error {
+	from:="mossabbs888@gmail.com"
+	appPassword := "klzo ruxm dmkc bail" // Replace with your generated app password
 	to := []string{"mossabbs888@gmail.com"} // Receiver's email address
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
-	fmt.Println(body)
 	// Construct the message
 	msg := []byte("To: " + to[0] + "\r\n" +
 		"Subject: Contact Form Submission\r\n" +
 		"\r\n" + body + "\r\n")
 
 	// Authentication for Gmail
-	auth := smtp.PlainAuth("", from, password, smtpHost)
-
+	auth := smtp.PlainAuth("", from, appPassword, smtpHost)
 	// Send the email
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, msg)
 }
