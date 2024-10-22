@@ -13,12 +13,8 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
 		// Display the homepage
 		renderTemplate(w, "Home Page", &res)
-		res = result{
-			Symbol:  "", // Clear previous values
-			Banner: "",
-			Text: "",
-			Err:  "",
-		}
+		res = result{}
+		msg=Email{}
 	} else {
 		errorHandler(w, http.StatusNotFound)
 	}

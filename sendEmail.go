@@ -31,11 +31,11 @@ func sendEmailHandler(w http.ResponseWriter, r *http.Request) {
 		err := sendEmail(body)
 		if err != nil {
 			log.Println("Error sending email:", err)
-			http.Error(w, "Failed to send email", http.StatusInternalServerError)
+			msgErrorEmail(w, r, "Failed to send email")
 			return
 		}
 
-		fmt.Fprintln(w, "Email sent successfully!")
+		msgValidEmail(w, r, "Email sent successfully!")
 	} else {
 		// 404 Error for incorrect path
 		errorHandler(w, http.StatusNotFound)

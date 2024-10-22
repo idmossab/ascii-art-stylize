@@ -39,3 +39,22 @@ func setError(w http.ResponseWriter, r *http.Request, errorMessage string) {
 	// Force a reload of the page to show the error
 	http.Redirect(w, r, "/", http.StatusFound)
 }
+
+type Email struct{
+	MsgValid string
+	MsgError string
+}
+var msg Email
+
+func msgValidEmail(w http.ResponseWriter, r *http.Request, Message string) {
+	msg.MsgValid = Message
+	msg.MsgError=""
+	http.Redirect(w, r, "/", http.StatusFound)
+}
+
+func msgErrorEmail(w http.ResponseWriter, r *http.Request, Message string) {
+	msg.MsgError = Message
+	msg.MsgValid=""
+	http.Redirect(w, r, "/", http.StatusFound)
+}
+

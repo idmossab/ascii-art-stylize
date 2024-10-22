@@ -52,6 +52,10 @@
             <div class="footer-center">
                 <h3>Contact Us</h3>
                 <form action="/send-email" method="POST">
+                   <div>
+                    <h2 style="color: red;">{{.Msg.MsgError}}</h2>
+                    <h2 style="color: green;">{{.Msg.MsgValid}}</h2>
+                   </div>
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" placeholder="Your Message" required></textarea>

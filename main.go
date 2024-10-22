@@ -43,6 +43,7 @@ func renderTemplate(w http.ResponseWriter, title string, result *result) {
 	err := templates.ExecuteTemplate(w, "layout.html", map[string]interface{}{
 		"Title":  title,
 		"Result": result, // Pass the result to the template
+		"Msg":msg,
 	})
 	// Server error
 	if err != nil {

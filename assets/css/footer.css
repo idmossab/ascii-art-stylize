@@ -106,6 +106,13 @@ footer {
     background-color: darkred;
 }
 
+.MsgValid{
+    color: greenyellow;
+}
+
+.MsgError{
+    color: red;
+}
 
 /* -------------------------------- Right Section (Google Map) ----------------------------------*/
 
