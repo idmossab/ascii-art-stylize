@@ -1,4 +1,4 @@
-/* --------------- Section-home styling -------------------*/
+/* ------------------------------- Section-home styling -------------------*/
 
 #home-section {
     padding: 50px;
@@ -135,7 +135,7 @@ button[type="button"]:hover {
 }
 
 
-/* Result Display Styles */
+/* --------------------------------- Result Display Styles --------------------------------- */
 
 #reload {
     background-color: #ffffff;
@@ -172,4 +172,11 @@ button[type="button"]:hover {
     /* Improve readability */
     color: #000;
     /* Text color */
+}
+
+#reload #downloadBtn {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    cursor: pointer;
 }
