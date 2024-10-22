@@ -1,8 +1,12 @@
 /* --------------- Section-about styling -------------------*/
 
 #about-section {
+    background-color: #9999;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    text-align: center;
     padding: 50px;
-    background-color: #fbfcfc;
     border-bottom: 1px solid #ddd;
     margin-top: 10px;
 }
@@ -12,18 +16,12 @@
     margin: 0 auto;
     padding: 20px;
 }
-h1, h2 {
+#about-section h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #333;
+    color:red;
 }
-#about-section {
-    background-color: #e9f5ff;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    text-align: center;
-}
+
 #about-section p {
     font-size: 18px;
     color: #555;
@@ -61,6 +59,24 @@ h1, h2 {
 .member p {
     font-size: 16px;
     color: #777;
+}
+/* Social media icons */
+
+ /* Social Icons */
+.container .social-icons {
+    margin-top: 20px;
+}
+.container .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+.container .social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+.container .social-icons img:hover {
+    transform: scale(1.2);
 }
 @media (max-width: 768px) {
     .member {

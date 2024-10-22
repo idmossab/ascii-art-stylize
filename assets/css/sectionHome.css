@@ -29,6 +29,11 @@ h2 {
     margin: 10px 0;
 }
 
+#home-section h1 {
+    color: #ffff;
+}
+
+
 
 /* Label Styles */
 
@@ -71,9 +76,32 @@ legend {
 /* Radio Button Styles */
 
 input[type="radio"] {
-    margin-right: 5px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: darkred;
+    border-radius: 50%;
+}
+
+input[type="radio"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(248, 0, 0, 0.171);
+}
 
 /* Button Styles */
 

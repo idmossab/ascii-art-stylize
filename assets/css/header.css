@@ -18,6 +18,11 @@ header {
     text-decoration: none;
     /* Removes the underline */
 }
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #333;
+}
 
 nav ul {
     list-style-type: none;
