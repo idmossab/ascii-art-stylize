@@ -148,3 +148,26 @@ footer {
     margin: 0;
     font-size: 12px;
 }
+/* ------------------ Responsive Design for Mobile Devices --------------------- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center the sections */
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        width: 100%; /* Full width on mobile */
+        text-align: center;
+        margin-bottom: 20px; /* Space between sections */
+    }
+
+    .footer-center form input[type="text"],
+    .footer-center form input[type="email"],
+    .footer-center button {
+        width: 90%; /* Increase width for mobile */
+    }
+
+    .footer-map iframe {
+        width: 100%; /* Ensure the map takes full width on mobile */
+    }
+}

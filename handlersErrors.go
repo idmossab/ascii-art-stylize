@@ -40,12 +40,6 @@ func setError(w http.ResponseWriter, r *http.Request, errorMessage string) {
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
-type Email struct{
-	MsgValid string
-	MsgError string
-}
-var msg Email
-
 func msgValidEmail(w http.ResponseWriter, r *http.Request, Message string) {
 	msg.MsgValid = Message
 	msg.MsgError=""

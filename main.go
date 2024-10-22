@@ -12,10 +12,14 @@ type result struct {
 	Text  string // Store the text value
 	Banner string // Store the selected banner value
 }
-
+type Email struct{
+	MsgValid string
+	MsgError string
+}
 var (
 	templates = template.Must(template.ParseGlob("templates/*.html"))
 	res       result
+	msg Email
 )
 
 func main() {

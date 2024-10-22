@@ -39,3 +39,27 @@ nav ul li a {
 nav ul li a:hover {
     color: #fff;
 }
+
+
+/* ------------------ Responsive Design for Header --------------------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the logo and nav vertically */
+        text-align: center; /* Center everything */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        margin-top: 10px; /* Add space between logo and menu */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Remove horizontal margin */
+        margin-bottom: 10px; /* Add vertical margin between items */
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Increase font size for better readability on mobile */
+        padding: 10px 15px; /* Make the clickable area larger */
+    }
+}
